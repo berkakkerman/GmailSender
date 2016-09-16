@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<title>Contact</title>
+<head>
+<style>
+#success_message{ display: none;}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script>
+
+  function sendEmail(){
+  var subject=document.getElementById("subject").value;
+  var message=document.getElementById("message").value;
+  var body=document.getElementById("textForFile").value;
+  google.script.run.createAndSendDocument(subject,message,body);
+  }
+  
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Contact Us Today!</legend>
+<!-- Text input-->
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Subject</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="subject" name="subject" placeholder="Subject" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<!--
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input id="first_name"  name="first_name" placeholder="First Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<!--
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  id="last_name" name="last_name" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<!--
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input id="email" name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+    <!--   
+<div class="form-group">
+  <label class="col-md-4 control-label">Phone #</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input id="phone" name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Text input-->
+ <!--
+<div class="form-group">
+  <label class="col-md-4 control-label">City</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="city" name="city" placeholder="city" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+   <!--
+<div class="form-group"> 
+  <label class="col-md-4 control-label">State</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="state" class="form-control selectpicker" >
+      <option value=" " >Please select your state</option>
+      <option value="0">------</option>
+    <option value="1">Adana</option>
+    <option value="2">Adýyaman</option>
+    <option value="3">Afyonkarahisar</option>
+    <option value="4">Aðrý</option>
+    <option value="5">Amasya</option>
+    <option value="6">Ankara</option>
+    <option value="7">Antalya</option>
+    <option value="8">Artvin</option>
+    <option value="9">Aydýn</option>
+    <option value="10">Balýkesir</option>
+    <option value="11">Bilecik</option>
+    <option value="12">Bingöl</option>
+    <option value="13">Bitlis</option>
+    <option value="14">Bolu</option>
+    <option value="15">Burdur</option>
+    <option value="16">Bursa</option>
+    <option value="17">Çanakkale</option>
+    <option value="18">Çankýrý</option>
+    <option value="19">Çorum</option>
+    <option value="20">Denizli</option>
+    <option value="21">Diyarbakýr</option>
+    <option value="22">Edirne</option>
+    <option value="23">Elazýð</option>
+    <option value="24">Erzincan</option>
+    <option value="25">Erzurum</option>
+    <option value="26">Eskiþehir</option>
+    <option value="27">Gaziantep</option>
+    <option value="28">Giresun</option>
+    <option value="29">Gümüþhane</option>
+    <option value="30">Hakkâri</option>
+    <option value="31">Hatay</option>
+    <option value="32">Isparta</option>
+    <option value="33">Mersin</option>
+    <option value="34">Ýstanbul</option>
+    <option value="35">Ýzmir</option>
+    <option value="36">Kars</option>
+    <option value="37">Kastamonu</option>
+    <option value="38">Kayseri</option>
+    <option value="39">Kýrklareli</option>
+    <option value="40">Kýrþehir</option>
+    <option value="41">Kocaeli</option>
+    <option value="42">Konya</option>
+    <option value="43">Kütahya</option>
+    <option value="44">Malatya</option>
+    <option value="45">Manisa</option>
+    <option value="46">Kahramanmaraþ</option>
+    <option value="47">Mardin</option>
+    <option value="48">Muðla</option>
+    <option value="49">Muþ</option>
+    <option value="50">Nevþehir</option>
+    <option value="51">Niðde</option>
+    <option value="52">Ordu</option>
+    <option value="53">Rize</option>
+    <option value="54">Sakarya</option>
+    <option value="55">Samsun</option>
+    <option value="56">Siirt</option>
+    <option value="57">Sinop</option>
+    <option value="58">Sivas</option>
+    <option value="59">Tekirdað</option>
+    <option value="60">Tokat</option>
+    <option value="61">Trabzon</option>
+    <option value="62">Tunceli</option>
+    <option value="63">Þanlýurfa</option>
+    <option value="64">Uþak</option>
+    <option value="65">Van</option>
+    <option value="66">Yozgat</option>
+    <option value="67">Zonguldak</option>
+    <option value="68">Aksaray</option>
+    <option value="69">Bayburt</option>
+    <option value="70">Karaman</option>
+    <option value="71">Kýrýkkale</option>
+    <option value="72">Batman</option>
+    <option value="73">Þýrnak</option>
+    <option value="74">Bartýn</option>
+    <option value="75">Ardahan</option>
+    <option value="76">Iðdýr</option>
+    <option value="77">Yalova</option>
+    <option value="78">Karabük</option>
+    <option value="79">Kilis</option>
+    <option value="80">Osmaniye</option>
+    <option value="81">Düzce</option>
+    </select>
+  </div>
+</div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">File Content</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="textForFile" name="textForFile" placeholder="if you want to send a text in a file" class="form-control"  type="text">
+    </div>
+</div>
+</div>
+
+<!-- Text input-->
+<!--
+<div class="form-group">
+  <label class="col-md-4 control-label">Website or domain name</label>  
+   <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input name="website" placeholder="Website or domain name" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- radio checks -->
+<!--
+ <div class="form-group">
+                        <label class="col-md-4 control-label">Do you have hosting?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="yes" /> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="no" /> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+-->
+<!-- Text area -->
+  
+<div class="form-group">
+  <label class="col-md-4 control-label">Message</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<textarea id="message" class="form-control" name="comment" placeholder="Message"></textarea>
+  </div>
+  </div>
+</div>
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button onclick='sendEmail();'  class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+    <button onclick='close();'  class="btn btn-danger" >Close <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
